@@ -28,6 +28,12 @@ describe Madison do
     it "returns nil in the event that is not passed a valid state name" do
       @m.get_abbrev("Fake State").should === nil
     end
+
+    it "raises an ArgumentError if it is not passed a string" do
+      lambda { @m.get_abbrev(3) }.should raise_error
+      lambda { @m.get_abbrev(nil) }.should raise_error
+      lambda { @m.get_abbrev({}) }.should raise_error
+    end
   end
   
   describe "#get_name" do
@@ -47,6 +53,12 @@ describe Madison do
 
     it "returns nil in the event that is not passed a valid state name" do
       @m.get_name("FS").should === nil
+    end
+
+    it "raises an ArgumentError if it is not passed a string" do
+      lambda { @m.get_name(3) }.should raise_error
+      lambda { @m.get_name(nil) }.should raise_error
+      lambda { @m.get_name({}) }.should raise_error
     end
   end
 end
