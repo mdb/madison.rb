@@ -27,7 +27,7 @@ class Madison
   end
 
   def build_map(in_key, out_key)
-     states.inject({}) do |map, state|
+    states.inject({}) do |map, state|
       map[state[in_key].downcase] = state[out_key]
       map 
     end
