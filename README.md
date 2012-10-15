@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/mdb/ruby-madison.png)](http://travis-ci.org/mdb/ruby-madison)
+
 # madison
 
 A dirt simple Ruby gem for working with US state names and abbreviations.
