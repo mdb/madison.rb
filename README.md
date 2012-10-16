@@ -13,8 +13,15 @@ Note that it's currently unpublished.
     git clone https://github.com/mdb/ruby-madison
     cd ruby-madison 
     bundle install
-    gem build madison.gemspec
-    gem install madison-0.0.0.0.gem
+    rake install
+
+## Run Rspec tests
+
+    rake
+
+## View code coverage after running Rspec tests
+
+    open coverage/index.html
 
 ## Usage 
 
