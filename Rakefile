@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "madison"
-  gem.homepage = "http://github.com/mdb/ruby-madison"
+  gem.homepage = "http://github.com/mdb/madison.rb"
   gem.license = "MIT"
   gem.summary = %Q{A simple Ruby gem for working with U.S. state names and abbreviations.}
   gem.description = %Q{Get a U.S. state name from its abbreviation or get a U.S. state abbreviation from its name.}
