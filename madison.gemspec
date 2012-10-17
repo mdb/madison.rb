@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "madison"
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Ball"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/madison.rb",
     "lib/states.json",
+    "madison.gemspec",
     "spec/lib/madison_spec.rb",
     "spec/spec_helper.rb"
   ]
