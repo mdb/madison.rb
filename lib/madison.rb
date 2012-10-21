@@ -4,7 +4,8 @@ class Madison
   attr_accessor :states
 
   def states 
-    @states ||= JSON.parse( File.open(File.join("lib", "states.json")).read )
+    madison_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
+    @states ||= JSON.parse( File.open(File.join(madison_dir, "lib", "states.json")).read )
   end
 
   def get_abbrev(name)
