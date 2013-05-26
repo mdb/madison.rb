@@ -37,18 +37,14 @@ Require madison:
   
     require 'madison'
 
-Initialize madison:
-
-    m = Madison.new
-
 Get a state's abbreviation:
 
-    m.get_abbrev 'virginia' // 'VA'
+    Madison.get_abbrev 'virginia' // 'VA'
 
 Get a state's name asynchronously:
 
-    m.get_name 'va' // 'Virginia'
+    Madison.get_name 'va' // 'Virginia'
 
 Get a Ruby hash of US states, each containing 'name' and 'abbr' properties:
 
-    m.states
+    Madison.states
