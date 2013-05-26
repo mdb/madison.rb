@@ -10,12 +10,12 @@ module Madison
     end
 
     def get_abbrev(name)
-      raise ArgumentError("Argument must be a string") unless name.is_a? String
+      validate_arg(name)
       state_abbrevs[name.downcase]
     end
 
     def get_name(abbrev)
-      raise ArgumentError("Argument must be a string") unless abbrev.is_a? String
+      validate_arg(abbrev)
       state_names[abbrev.downcase]
     end
 
@@ -33,6 +33,10 @@ module Madison
         map[state[in_key].downcase] = state[out_key]
         map 
       end
+    end
+
+    def validate_arg(arg)
+      raise ArgumentError, "Argument '#{arg}' must be a string" unless arg.is_a? String
     end
   end
 
