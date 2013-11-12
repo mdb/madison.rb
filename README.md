@@ -12,6 +12,10 @@ The released gem (recommended):
 
     gem install madison
 
+In your gem file, specify the most recent version:
+
+    gem 'madison', github: 'mdb/madison'
+
 Alternatively, from source code:
 
     git clone https://github.com/mdb/madison.rb
