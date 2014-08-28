@@ -2,16 +2,16 @@ require "spec_helper"
 
 describe Madison do
   it "exists as a module" do
-    Madison.class.should eq Module 
+    expect(Madison.class).to eq Module 
   end
 
   describe "#states" do
     it "returns a Ruby hash of state names and abbreviations" do 
       m = Madison
 
-      m.states[0]['name'].should === "Alabama"
-      m.states[50]['abbr'].should === "WY"
-      m.states.length.should === 51 
+      expect(m.states[0]['name']).to be === "Alabama"
+      expect(m.states[50]['abbr']).to be === "WY"
+      expect(m.states.length).to be === 51 
     end
 
     describe "#get_abbrev" do
@@ -20,23 +20,23 @@ describe Madison do
       end
 
       it "returns a state's abbreviation when it's passed a state's name" do 
-        @m.get_abbrev("virginia").should === "VA"
-        @m.get_abbrev("west virginia").should === "WV"
+        expect(@m.get_abbrev("virginia")).to be === "VA"
+        expect(@m.get_abbrev("west virginia")).to be === "WV"
       end
       
       it "returns a state's abbreviation when it's passed a state's name, indpendent of the argument's case" do 
-        @m.get_abbrev("virginiA").should === "VA"
-        @m.get_abbrev("AlaBama").should === "AL"
+        expect(@m.get_abbrev("virginiA")).to be === "VA"
+        expect(@m.get_abbrev("AlaBama")).to be === "AL"
       end
 
       it "returns nil in the event that is not passed a valid state name" do
-        @m.get_abbrev("Fake State").should === nil
+        expect(@m.get_abbrev("Fake State")).to be === nil
       end
 
       it "raises an ArgumentError if it is not passed a string" do
-        lambda { @m.get_abbrev(3) }.should raise_error
-        lambda { @m.get_abbrev(nil) }.should raise_error
-        lambda { @m.get_abbrev({}) }.should raise_error
+        expect { @m.get_abbrev(3) }.to raise_error
+        expect { @m.get_abbrev(nil) }.to raise_error
+        expect { @m.get_abbrev({}) }.to raise_error
       end
     end
     
@@ -46,38 +46,38 @@ describe Madison do
       end
 
       it "returns a state's abbreviation when it's passed a state's name" do 
-        @m.get_name("va").should === "Virginia"
-        @m.get_name("WV").should === "West Virginia"
+        expect(@m.get_name("va")).to be === "Virginia"
+        expect(@m.get_name("WV")).to be === "West Virginia"
       end
       
       it "returns a state's abbreviation when it's passed a state's name, indpendent of the argument's case" do 
-        @m.get_name("vA").should === "Virginia"
-        @m.get_name("Al").should === "Alabama"
+        expect(@m.get_name("vA")).to be === "Virginia"
+        expect(@m.get_name("Al")).to be === "Alabama"
       end
 
       it "returns nil in the event that is not passed a valid state name" do
-        @m.get_name("FS").should === nil
+        expect(@m.get_name("FS")).to be === nil
       end
 
       it "raises an ArgumentError if it is not passed a string" do
-        lambda { @m.get_name(3) }.should raise_error
-        lambda { @m.get_name(nil) }.should raise_error
-        lambda { @m.get_name({}) }.should raise_error
+        expect { @m.get_name(3) }.to raise_error
+        expect { @m.get_name(nil) }.to raise_error
+        expect { @m.get_name({}) }.to raise_error
       end
     end
   end
 
   describe "Madison::Map" do
     it "exists as a class within the Madison module" do
-      Madison::Map.class.should eq Class 
+      expect(Madison::Map.class).to eq Class 
     end
 
     describe "#states" do
       it "returns a Ruby hash of state names and abbreviations" do 
         m = Madison::Map.new
-        m.states[0]['name'].should === "Alabama"
-        m.states[50]['abbr'].should === "WY"
-        m.states.length.should === 51 
+        expect(m.states[0]['name']).to be === "Alabama"
+        expect(m.states[50]['abbr']).to be === "WY"
+        expect(m.states.length).to be === 51 
       end
     end
     
@@ -87,23 +87,23 @@ describe Madison do
       end
 
       it "returns a state's abbreviation when it's passed a state's name" do 
-        @m.get_abbrev("virginia").should === "VA"
-        @m.get_abbrev("west virginia").should === "WV"
+        expect(@m.get_abbrev("virginia")).to be === "VA"
+        expect(@m.get_abbrev("west virginia")).to be === "WV"
       end
       
       it "returns a state's abbreviation when it's passed a state's name, indpendent of the argument's case" do 
-        @m.get_abbrev("virginiA").should === "VA"
-        @m.get_abbrev("AlaBama").should === "AL"
+        expect(@m.get_abbrev("virginiA")).to be === "VA"
+        expect(@m.get_abbrev("AlaBama")).to be === "AL"
       end
 
       it "returns nil in the event that is not passed a valid state name" do
-        @m.get_abbrev("Fake State").should === nil
+        expect(@m.get_abbrev("Fake State")).to be === nil
       end
 
       it "raises an ArgumentError if it is not passed a string" do
-        lambda { @m.get_abbrev(3) }.should raise_error
-        lambda { @m.get_abbrev(nil) }.should raise_error
-        lambda { @m.get_abbrev({}) }.should raise_error
+        expect { @m.get_abbrev(3) }.to raise_error
+        expect { @m.get_abbrev(nil) }.to raise_error
+        expect { @m.get_abbrev({}) }.to raise_error
       end
     end
     
@@ -113,23 +113,23 @@ describe Madison do
       end
 
       it "returns a state's abbreviation when it's passed a state's name" do 
-        @m.get_name("va").should === "Virginia"
-        @m.get_name("WV").should === "West Virginia"
+        expect(@m.get_name("va")).to be === "Virginia"
+        expect(@m.get_name("WV")).to be === "West Virginia"
       end
       
       it "returns a state's abbreviation when it's passed a state's name, indpendent of the argument's case" do 
-        @m.get_name("vA").should === "Virginia"
-        @m.get_name("Al").should === "Alabama"
+        expect(@m.get_name("vA")).to be === "Virginia"
+        expect(@m.get_name("Al")).to be === "Alabama"
       end
 
       it "returns nil in the event that is not passed a valid state name" do
-        @m.get_name("FS").should === nil
+        expect(@m.get_name("FS")).to be === nil
       end
 
       it "raises an ArgumentError if it is not passed a string" do
-        lambda { @m.get_name(3) }.should raise_error
-        lambda { @m.get_name(nil) }.should raise_error
-        lambda { @m.get_name({}) }.should raise_error
+        expect { @m.get_name(3) }.to raise_error
+        expect { @m.get_name(nil) }.to raise_error
+        expect { @m.get_name({}) }.to raise_error
       end
     end
   end
