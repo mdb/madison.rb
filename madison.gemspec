@@ -5,62 +5,20 @@
 
 Gem::Specification.new do |s|
   s.name = "madison"
-  s.version = "0.3.0"
-
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.version = Madison::VERSION
   s.authors = ["Mike Ball"]
-  s.date = "2012-10-21"
   s.description = "Get a U.S. state name from its abbreviation or get a U.S. state abbreviation from its name."
+  s.summary = "A simple Ruby gem for working with U.S. state names and abbreviations."
   s.email = "mikedball@gmail.com"
-  s.extra_rdoc_files = [
-    "LICENSE",
-    "README.md"
-  ]
-  s.files = [
-    ".travis.yml",
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE",
-    "README.md",
-    "Rakefile",
-    "VERSION",
-    "lib/madison.rb",
-    "lib/states.json",
-    "madison.gemspec",
-    "spec/lib/madison_spec.rb",
-    "spec/spec_helper.rb"
-  ]
   s.homepage = "http://github.com/mdb/madison.rb"
   s.licenses = ["MIT"]
+  s.files = `git ls-files`.split($/)
+  spec.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
-  s.summary = "A simple Ruby gem for working with U.S. state names and abbreviations."
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  s.add_dependency "json"
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<json>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<simplecov>, [">= 0"])
-    else
-      s.add_dependency(%q<json>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<simplecov>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<json>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<simplecov>, [">= 0"])
-  end
+  s.add_development_dependency "bundler"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "simplecov"
 end
-
