@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/mdb/ruby-madison.png)](http://travis-ci.org/mdb/ruby-madison)
+[![Build Status](https://travis-ci.org/mdb/madison.rb.svg?branch=master)](https://travis-ci.org/mdb/madison.rb)
 
 # madison
 
@@ -10,41 +10,41 @@ This is the Ruby version of the Node.js [madison](http://github.com/mdb/madison)
 
 The released gem (recommended):
 
-    gem install madison
+```
+$ gem install madison
+```
 
-Alternatively, from source code:
-
-    git clone https://github.com/mdb/madison.rb
-    cd madison.rb
-    bundle install
-    rake install
-
-## Run Rspec tests
-
-(Assuming you've installed from source code)
-
-    rake
-
-## View code coverage after running Rspec tests
-
-(Again, assuming you've installed from source code)
-
-    open coverage/index.html
-
-## Usage 
+## Usage
 
 Require madison:
-  
-    require 'madison'
+
+```ruby
+require 'madison'
+```
 
 Get a state's abbreviation:
 
-    Madison.get_abbrev 'virginia' // 'VA'
+```ruby
+Madison.get_abbrev 'virginia'
+# => VA
+```
 
-Get a state's name asynchronously:
+Get a state's name:
 
-    Madison.get_name 'va' // 'Virginia'
+```ruby
+Madison.get_name 'va'
+# => Virginia
+```
 
-Get a Ruby hash of US states, each containing 'name' and 'abbr' properties:
+Get an array of US state names/abbreviations:
 
-    Madison.states
+```ruby
+Madison.states
+# => [
+  {
+    name: 'Virginia',
+    abbr: 'VA'
+  },
+  ...
+]
+```
