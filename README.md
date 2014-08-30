@@ -41,10 +41,10 @@ Get an array of US state names/abbreviations:
 ```ruby
 Madison.states
 # => [
-  {
-    name: 'Virginia',
-    abbr: 'VA'
-  },
-  ...
-]
+#  {
+#    name: 'Virginia',
+#    abbr: 'VA'
+#  },
+#  ...
+#]
 ```
