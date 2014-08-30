@@ -1,0 +1,3 @@
+module Madison
+  VERSION = ''
+end
