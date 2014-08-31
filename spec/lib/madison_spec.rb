@@ -80,4 +80,70 @@ describe Madison do
       end
     end
   end
+
+  context 'the methods it provides a class when it is mixed into the class' do
+    include Madison
+
+    describe '#states' do
+      it 'returns an array of state names & abbreviations' do
+        expect(states.length).to eq 51
+      end
+
+      context 'each hash in the states array' do
+        it 'has a "name" key' do
+          expect(states[0]['name']).to eq 'Alabama'
+        end
+
+        it 'has an "abbrev" key' do
+          expect(states[0]['abbr']).to eq 'AL'
+        end
+      end
+    end
+
+    describe '#state_name' do
+      context 'when it is passed an abbreviation' do
+        it 'returns the correct state name' do
+          expect(state_name 'va').to eq 'Virginia'
+        end
+      end
+
+      context 'when it is passed an invalid abbreviation' do
+        it 'returns nil' do
+          expect(state_name 'xx').to eq nil
+        end
+      end
+
+      context 'when it is not passed an argument' do
+        it 'raises an error' do
+          expect { state_name }.to raise_error
+        end
+      end
+    end
+
+    describe '#state_abbrev' do
+      context 'when it is passed a state name' do
+        it 'returns the correct state abbreviation' do
+          expect(state_abbrev 'virginia').to eq 'VA'
+        end
+      end
+
+      context 'when it is passed an invalid name' do
+        it 'returns nil' do
+          expect(state_abbrev 'fake_state').to eq nil
+        end
+      end
+
+      context 'when it is not passed an argument' do
+        it 'raises an error' do
+          expect { state_abbrev }.to raise_error
+        end
+      end
+    end
+
+    describe '#madison_map' do
+      it 'returns an instance of a Madison::Map class' do
+        expect(madison_map.class).to eq Madison::Map
+      end
+    end
+  end
 end
