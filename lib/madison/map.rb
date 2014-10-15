@@ -2,8 +2,6 @@ require 'json'
 
 module Madison
   class Map
-    attr_accessor :states
-
     def states
       lib_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
 
