@@ -4,5 +4,5 @@ gemspec
 
 group :development do
   gem 'pry'
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
 end
